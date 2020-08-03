@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class TriggerChecker : MonoBehaviour
 {
-    [SerializeField] string triggerName;
+    [SerializeField] Environment item;
 
     public void OnTriggerEnter(Collider other)
     {
-        triggerName = this.name;
-        Interact(triggerName);
+        Interact(item.EnvItemName);
+        Debug.Log(item.EnvItemName);
     }
 
     private void Interact(string triggerToInteract)
     {
         switch (triggerToInteract)
         {
-            case ("AreaExit"):
+            case ("Area End"):
                 AreaExit();
                 break;
 

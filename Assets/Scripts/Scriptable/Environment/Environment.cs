@@ -4,10 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Environmetn Item", menuName ="Environment")]
 public class Environment : ScriptableObject
 {
-    [SerializeField] string eItemName;
+    [SerializeField] string envItemName = "test";
 
-    public string EItemName 
+    public string EnvItemName 
     {
-        get { return eItemName; }
+        get { return envItemName; }
     }
 }

@@ -425,6 +425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerName: 
+  items:
+  - {fileID: 11400000, guid: 423dd64d4422d694a86a5cef077b3ea8, type: 2}
 --- !u!1 &599424700
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerName: 
+  items: []
 --- !u!4 &599424703
 Transform:
   m_ObjectHideFlags: 0

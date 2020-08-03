@@ -6,10 +6,25 @@ public class TriggerChecker : MonoBehaviour
 {
     [SerializeField] Environment item;
 
+    private void Start()
+    {
+        item.IsChecked = false;
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         Interact(item.EnvItemName);
-        Debug.Log(item.EnvItemName);
+        if (item.IsKey && !item.IsChecked)
+        {
+            FindObjectOfType<StageManager>().CompletedQuests += 1;
+            item.IsChecked = true;
+            Debug.Log(item.EnvItemMainDescription);
+            Debug.Log(FindObjectOfType<StageManager>().CompletedQuests);
+        }
+        else
+        {
+            Debug.Log(item.EnvItemCheckedDescription);
+        }
     }
 
     private void Interact(string triggerToInteract)
@@ -23,11 +38,10 @@ public class TriggerChecker : MonoBehaviour
             default:
                 break;
         }
-
     }
 
     private void AreaExit()
     {
-        Debug.Log("Check for exit from area ");
+        FindObjectOfType<StageManager>().CheckForLevelEnd();
     }
 }
